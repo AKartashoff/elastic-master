@@ -1,0 +1,16 @@
+DimCustomer.ktr: 
+Error reading object from XML file
+
+Error reading object from XML file
+
+Unable to load step info from XML step nodeorg.pentaho.di.core.exception.KettlePluginException: 
+Unexpected error loading class:
+org/mozilla/javascript/JavaScriptException
+
+
+Unexpected error loading class:
+org/mozilla/javascript/JavaScriptException
+
+
+
+

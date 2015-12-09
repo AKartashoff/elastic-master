@@ -1,0 +1,258 @@
+// @SOURCE:/Users/antonkartashov/Documents/project/elastic-master/conf/routes
+// @HASH:0ec732680ce110a3fd94cc3ba57837060f958cec
+// @DATE:Mon Jun 22 13:57:48 EEST 2015
+
+import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
+import play.core._
+import play.core.Router._
+import play.core.j._
+
+import play.api.mvc._
+import play.libs.F
+
+import Router.queryString
+
+
+// @LINE:17
+// @LINE:16
+// @LINE:13
+// @LINE:11
+// @LINE:10
+// @LINE:6
+package controllers {
+
+// @LINE:17
+class ReverseWebJarAssets {
+    
+
+// @LINE:17
+def at(file:String): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "webjars/" + implicitly[PathBindable[String]].unbind("file", file))
+}
+                                                
+    
+}
+                          
+
+// @LINE:16
+class ReverseAssets {
+    
+
+// @LINE:16
+def at(file:String): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
+}
+                                                
+    
+}
+                          
+
+// @LINE:13
+// @LINE:11
+// @LINE:10
+// @LINE:6
+class ReverseApplication {
+    
+
+// @LINE:10
+def pentaho(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "pentaho")
+}
+                                                
+
+// @LINE:13
+def checkPreFlight(): Call = {
+   Call("OPTIONS", _prefix + { _defaultPrefix } + "json")
+}
+                                                
+
+// @LINE:6
+def index(): Call = {
+   Call("GET", _prefix)
+}
+                                                
+
+// @LINE:11
+def executionController(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "executionController")
+}
+                                                
+    
+}
+                          
+}
+                  
+
+
+// @LINE:17
+// @LINE:16
+// @LINE:13
+// @LINE:11
+// @LINE:10
+// @LINE:6
+package controllers.javascript {
+
+// @LINE:17
+class ReverseWebJarAssets {
+    
+
+// @LINE:17
+def at : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.WebJarAssets.at",
+   """
+      function(file) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "webjars/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("file", file)})
+      }
+   """
+)
+                        
+    
+}
+              
+
+// @LINE:16
+class ReverseAssets {
+    
+
+// @LINE:16
+def at : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Assets.at",
+   """
+      function(file) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("file", file)})
+      }
+   """
+)
+                        
+    
+}
+              
+
+// @LINE:13
+// @LINE:11
+// @LINE:10
+// @LINE:6
+class ReverseApplication {
+    
+
+// @LINE:10
+def pentaho : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.pentaho",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pentaho"})
+      }
+   """
+)
+                        
+
+// @LINE:13
+def checkPreFlight : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.checkPreFlight",
+   """
+      function() {
+      return _wA({method:"OPTIONS", url:"""" + _prefix + { _defaultPrefix } + """" + "json"})
+      }
+   """
+)
+                        
+
+// @LINE:6
+def index : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.index",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + """"})
+      }
+   """
+)
+                        
+
+// @LINE:11
+def executionController : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.executionController",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "executionController"})
+      }
+   """
+)
+                        
+    
+}
+              
+}
+        
+
+
+// @LINE:17
+// @LINE:16
+// @LINE:13
+// @LINE:11
+// @LINE:10
+// @LINE:6
+package controllers.ref {
+
+
+// @LINE:17
+class ReverseWebJarAssets {
+    
+
+// @LINE:17
+def at(file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.WebJarAssets.at(file), HandlerDef(this, "controllers.WebJarAssets", "at", Seq(classOf[String]), "GET", """""", _prefix + """webjars/$file<.+>""")
+)
+                      
+    
+}
+                          
+
+// @LINE:16
+class ReverseAssets {
+    
+
+// @LINE:16
+def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
+)
+                      
+    
+}
+                          
+
+// @LINE:13
+// @LINE:11
+// @LINE:10
+// @LINE:6
+class ReverseApplication {
+    
+
+// @LINE:10
+def pentaho(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.pentaho(), HandlerDef(this, "controllers.Application", "pentaho", Seq(), "GET", """routes for pentaho view (uploading files)""", _prefix + """pentaho""")
+)
+                      
+
+// @LINE:13
+def checkPreFlight(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.checkPreFlight(), HandlerDef(this, "controllers.Application", "checkPreFlight", Seq(), "OPTIONS", """""", _prefix + """json""")
+)
+                      
+
+// @LINE:6
+def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq(), "GET", """ Home page""", _prefix + """""")
+)
+                      
+
+// @LINE:11
+def executionController(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.executionController(), HandlerDef(this, "controllers.Application", "executionController", Seq(), "POST", """""", _prefix + """executionController""")
+)
+                      
+    
+}
+                          
+}
+        
+    

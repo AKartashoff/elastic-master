@@ -1,0 +1,22 @@
+etl-initial.ktr: Step name: SUPPLIER Processed: 10000 Input: 10000 Runtime: 1257
+Step name: Sort on s_nationkey Processed: 10000 Input: 0 Runtime: 1463
+Step name: Merge Join Processed: 10025 Input: 0 Runtime: 1842
+Step name: NATION Processed: 25 Input: 25 Runtime: 160
+Step name: Sort on n_nationkey Processed: 25 Input: 0 Runtime: 131
+Step name: REGION Processed: 5 Input: 5 Runtime: 158
+Step name: Sort on r_regionkey Processed: 5 Input: 0 Runtime: 128
+Step name: Sort on n_regionkey  Processed: 10000 Input: 0 Runtime: 1852
+Step name: Merge Join 2 Processed: 10005 Input: 0 Runtime: 2165
+Step name: FILTER_R_NAME_EUROPE Processed: 10000 Input: 0 Runtime: 2170
+Step name: LINEITEM Processed: 12974 Input: 12974 Runtime: 1945
+Step name: Sort on l_suppkey Processed: 12974 Input: 0 Runtime: 2638
+Step name: Sort on s_suppkey Processed: 0 Input: 0 Runtime: 2172
+Step name: Merge Join 3 Processed: 12974 Input: 0 Runtime: 2792
+Step name: Merge Join 4 Processed: 0 Input: 0 Runtime: 3051
+Step name: Group by l_suppkey, SUM revenue Processed: 0 Input: 0 Runtime: 2904
+Step name: Sort on revenue Processed: 0 Input: 0 Runtime: 3052
+Step name: Text file output Processed: 0 Input: 0 Runtime: 3054
+Step name: User Defined Java Expression Processed: 0 Input: 0 Runtime: 2792
+Step name: OUTPUT Processed: 0 Input: 0 Runtime: 60
+Number of Null values in the OUTPUT table: 0 + 0
+

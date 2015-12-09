@@ -1,0 +1,8 @@
+package controllers;
+
+/**
+ * Created by antonkartashov on 22/06/15.
+ */
+public abstract class RoutingPolicy{
+    abstract String getNextURL();
+}

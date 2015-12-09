@@ -1,0 +1,19 @@
+#default#elastic-master_2.10;1.0-SNAPSHOT resolved revisions
+#Mon Jun 29 13:57:18 CEST 2015
++revision\:\#@\#\:+1.0.9\:\#@\#\:+module\:\#@\#\:+json-smart\:\#@\#\:+organisation\:\#@\#\:+net.minidev\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=1.0.9 release 1.0.9
++revision\:\#@\#\:+2.2.5\:\#@\#\:+module\:\#@\#\:+play-docs_2.10\:\#@\#\:+organisation\:\#@\#\:+com.typesafe.play\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=2.2.5 release 2.2.5
++revision\:\#@\#\:+3.1\:\#@\#\:+module\:\#@\#\:+commons-httpclient\:\#@\#\:+organisation\:\#@\#\:+commons-httpclient\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=3.1 release 3.1
++revision\:\#@\#\:+2.10.3\:\#@\#\:+module\:\#@\#\:+scala-compiler\:\#@\#\:+organisation\:\#@\#\:+org.scala-lang\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=2.10.3 release 2.10.3
++revision\:\#@\#\:+2.2.5\:\#@\#\:+module\:\#@\#\:+play-test_2.10\:\#@\#\:+organisation\:\#@\#\:+com.typesafe.play\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=2.2.5 release 2.2.5
++revision\:\#@\#\:+1.9.0\:\#@\#\:+module\:\#@\#\:+aws-java-sdk\:\#@\#\:+organisation\:\#@\#\:+com.amazonaws\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=1.9.0 release 1.9.0
++revision\:\#@\#\:+2.3.1\:\#@\#\:+module\:\#@\#\:+bootstrap\:\#@\#\:+organisation\:\#@\#\:+org.webjars\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=2.3.1 release 2.3.1
++revision\:\#@\#\:+0.9.0\:\#@\#\:+module\:\#@\#\:+jgrapht-core\:\#@\#\:+organisation\:\#@\#\:+org.jgrapht\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=0.9.0 release 0.9.0
++revision\:\#@\#\:+2.2.5\:\#@\#\:+module\:\#@\#\:+play-java-ebean_2.10\:\#@\#\:+organisation\:\#@\#\:+com.typesafe.play\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=2.2.5 release 2.2.5
++revision\:\#@\#\:+2.2.5\:\#@\#\:+module\:\#@\#\:+play_2.10\:\#@\#\:+organisation\:\#@\#\:+com.typesafe.play\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=2.2.5 release 2.2.5
++revision\:\#@\#\:+2.2.5\:\#@\#\:+module\:\#@\#\:+play-java_2.10\:\#@\#\:+organisation\:\#@\#\:+com.typesafe.play\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=2.2.5 release 2.2.5
++revision\:\#@\#\:+2.2.5\:\#@\#\:+module\:\#@\#\:+play-java-jdbc_2.10\:\#@\#\:+organisation\:\#@\#\:+com.typesafe.play\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=2.2.5 release 2.2.5
++revision\:\#@\#\:+2.2.5\:\#@\#\:+module\:\#@\#\:+play-cache_2.10\:\#@\#\:+organisation\:\#@\#\:+com.typesafe.play\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=2.2.5 release 2.2.5
++revision\:\#@\#\:+2.2.2\:\#@\#\:+module\:\#@\#\:+webjars-play_2.10\:\#@\#\:+organisation\:\#@\#\:+org.webjars\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=2.2.2 release 2.2.2
++revision\:\#@\#\:+2.6\:\#@\#\:+module\:\#@\#\:+commons-lang\:\#@\#\:+organisation\:\#@\#\:+commons-lang\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=2.6 release 2.6
++revision\:\#@\#\:+1.7\:\#@\#\:+module\:\#@\#\:+velocity\:\#@\#\:+organisation\:\#@\#\:+org.apache.velocity\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=1.7 release 1.7
++revision\:\#@\#\:+2.10.3\:\#@\#\:+module\:\#@\#\:+scala-library\:\#@\#\:+organisation\:\#@\#\:+org.scala-lang\:\#@\#\:+branch\:\#@\#\:+@\#\:NULL\:\#@\:\#@\#\:=2.10.3 release 2.10.3

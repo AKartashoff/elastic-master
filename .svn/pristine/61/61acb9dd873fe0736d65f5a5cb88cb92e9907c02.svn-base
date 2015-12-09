@@ -1,0 +1,13 @@
+package controllers;
+
+/**
+ * Created by antonkartashov on 22/06/15.
+ * * // ------ vasileios comment
+    // you should add descriptive comments both for the class and for the method
+ */
+public class RoundRobin extends RoutingPolicy {
+    @Override
+    String getNextURL() {
+        return ("http://localhost:9002/pentaho");
+    }
+}

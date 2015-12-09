@@ -1,0 +1,18 @@
+name := "elastic-master"
+
+version := "1.0-SNAPSHOT"
+
+libraryDependencies ++= Seq(
+  javaJdbc,
+  javaEbean,
+  cache,
+  "commons-httpclient" % "commons-httpclient" % "3.1",
+  "org.webjars" %% "webjars-play" % "2.2.2",
+  "org.webjars" % "bootstrap" % "2.3.1",
+  "org.jgrapht" % "jgrapht-core" % "0.9.0",
+  "org.apache.velocity" % "velocity" % "1.7",
+  "net.minidev" % "json-smart" % "1.0.9",
+  "commons-lang" % "commons-lang" % "2.6"
+)     
+
+play.Project.playJavaSettings

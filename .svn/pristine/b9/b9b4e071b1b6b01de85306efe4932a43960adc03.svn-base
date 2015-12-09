@@ -1,0 +1,80 @@
+
+package views.html
+
+import play.templates._
+import play.templates.TemplateMagic._
+
+import play.api.templates._
+import play.api.templates.PlayMagic._
+import models._
+import controllers._
+import java.lang._
+import java.util._
+import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
+import play.api.i18n._
+import play.core.j.PlayMagicForJava._
+import play.mvc._
+import play.data._
+import play.api.data.Field
+import play.mvc.Http.Context.Implicit._
+import views.html._
+/**/
+object pentaho_main extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template2[String,Html,play.api.templates.HtmlFormat.Appendable] {
+
+    /**/
+    def apply/*1.2*/(title: String)(content: Html):play.api.templates.HtmlFormat.Appendable = {
+        _display_ {
+
+Seq[Any](format.raw/*1.32*/("""
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>"""),_display_(Seq[Any](/*6.11*/title)),format.raw/*6.16*/("""</title>
+  <link rel='shortcut icon' type='image/png' href='"""),_display_(Seq[Any](/*7.53*/routes/*7.59*/.Assets.at("images/favicon.png"))),format.raw/*7.91*/("""'>
+  <link rel='stylesheet' href='"""),_display_(Seq[Any](/*8.33*/routes/*8.39*/.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.css")))),format.raw/*8.97*/("""'>
+  <script type='text/javascript' src='"""),_display_(Seq[Any](/*9.40*/routes/*9.46*/.WebJarAssets.at(WebJarAssets.locate("jquery.min.js")))),format.raw/*9.100*/("""'></script>
+  <style>
+    body """),format.raw/*11.10*/("""{"""),format.raw/*11.11*/("""
+      margin-top: 50px;
+    """),format.raw/*13.5*/("""}"""),format.raw/*13.6*/("""
+  </style>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a id="titleLink" class="brand" href="/">"""),_display_(Seq[Any](/*20.51*/title)),format.raw/*20.56*/("""</a>
+      </div>
+    </div>
+  </div>
+
+
+  <form method="POST" action=""""),_display_(Seq[Any](/*26.32*/{routes.Application.executionController()})),format.raw/*26.74*/("""" enctype="multipart/form-data" >
+  <input type="file" multiple="multiple" name="data"><br/>
+  <input type="submit">
+
+  </form>
+</body>
+</html>
+"""))}
+    }
+    
+    def render(title:String,content:Html): play.api.templates.HtmlFormat.Appendable = apply(title)(content)
+    
+    def f:((String) => (Html) => play.api.templates.HtmlFormat.Appendable) = (title) => (content) => apply(title)(content)
+    
+    def ref: this.type = this
+
+}
+                /*
+                    -- GENERATED --
+                    DATE: Mon Jun 22 13:59:13 EEST 2015
+                    SOURCE: /Users/antonkartashov/Documents/project/elastic-master/app/views/pentaho_main.scala.html
+                    HASH: 0f9764c38738cfc7b8cd904c64680d5474d9202d
+                    MATRIX: 786->1|910->31|987->73|1013->78|1109->139|1123->145|1176->177|1246->212|1260->218|1339->276|1416->318|1430->324|1506->378|1565->409|1594->410|1650->439|1678->440|1898->624|1925->629|2032->700|2096->742
+                    LINES: 26->1|29->1|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|39->11|39->11|41->13|41->13|48->20|48->20|54->26|54->26
+                    -- GENERATED --
+                */
+            

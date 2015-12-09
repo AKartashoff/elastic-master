@@ -1,0 +1,238 @@
+package controllers;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.google.common.io.Files;
+import etlFlowGraph.graph.ETLFlowGraph;
+import importXLM.ImportXLMToETLGraph;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
+import org.springframework.stereotype.Component;
+import play.Play;
+import play.libs.Json;
+import play.mvc.Controller;
+import play.mvc.Http.MultipartFormData;
+import play.mvc.Result;
+
+import javax.servlet.*;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
+public class Application extends Controller {
+
+    public static Result index() {
+        return ok(views.html.index.render("Hello Play Framework"));
+    }
+
+    // new view for the file upload
+    public static Result pentaho() {
+        return ok(views.html.pentaho.render("Hello Pentaho"));
+    }
+
+    /**
+     * The main method that uploads etl flows (xml files) through the form of
+     * the related view; stores them in the file system; sends them to slave
+     * apps, according to selected policy; receives from the slave apps
+     * execution metrics and stores them in the same file as the etl flows.
+     *
+     * @return pentaho results
+     */
+    public static Result executionController() {
+        MultipartFormData body = request().body().asMultipartFormData();
+        List<MultipartFormData.FilePart> fileParts = body.getFiles();
+
+        // getting the file path variable from application.conf, where to store
+        // the files
+        String uploadPath = Play.application().configuration()
+                .getString("uploadPath");
+
+        // string for the future result view in console
+        StringBuffer sb = new StringBuffer();
+
+        if (fileParts != null) {
+            // variable for iterating the uploaded files
+            int i = 0;
+            // ------ vasileios comment
+            // put what is inside this for loop inside a new method
+            // (executionClient()) and call it for every file
+            for (MultipartFormData.FilePart fp : fileParts) {
+                String result = executionClient(fileParts, uploadPath, sb, fp);
+                i++;
+            }
+
+            // System.out.println(sb.toString());
+            return ok(sb.toString());
+            // return redirect(routes.Application.pentaho());
+
+        } else {
+            flash("error", "Missing file");
+            return redirect(controllers.Application.pentaho().toString());
+        }
+    }
+
+    // ------ vasileios comment
+    // you should add descriptive comments both for the method
+    
+    // ------ vasileios comment
+    // remove the stringbuffer from the arguments, you can create it inside the method
+    
+ // ------ vasileios comment
+    // remove the fileparts from the arguments, you don't need it
+    private static String executionClient (List<MultipartFormData.FilePart> fileParts, String uploadPath, StringBuffer sb, MultipartFormData.FilePart fp){
+        try {
+
+            // variable for iterating the uploaded files
+            String fileName = fp.getFilename();
+            File file = fp.getFile();
+
+            String newDir = uploadPath + "/"
+                    + fileName.substring(0, fileName.indexOf("."));
+            File dir = new File(newDir);
+            dir.mkdir();
+            Files.write(Files.toByteArray(file), new File(newDir,
+                    fileName));
+
+            // sending the file to url
+            // ------ vasileios comment
+            // remove the variable size, the method should not be aware
+            // of the number of the files getNextUrl(fileParts.size()
+            RoundRobin rR = new RoundRobin();
+
+            String result = sendPost(rR.getNextURL(),file.toString());
+            sb.append(fileName).append(": ").append(result)
+                    .append("\n");
+            byte[] b = sb.toString().getBytes(Charset.forName("UTF-8"));
+            Files.write(b, new File(newDir, "Metrics"));
+            return result;
+            // return redirect(routes.Application.pentaho());
+        } catch (IOException ex) {
+            flash("error", ex.getMessage());
+            return ("error");
+        }
+    }
+    /**
+     * method that sends request to pentaho slave; receives the results and returns them in form of a string
+     *
+     * @param url
+     *            client url
+     * @param data
+     *            xml content of the file
+     * @return result time of kettle execution
+     */
+    private static String sendPost(String url, String data) {
+
+        HttpClient httpclient = new DefaultHttpClient();
+        HttpResponse response;
+        String result = "empty result";
+        try {
+            System.out.println("sendPost(): " + "data: " + data);
+            HttpPost httpPost = new HttpPost(url);
+            List<BasicNameValuePair> nvps = new ArrayList<BasicNameValuePair>();
+            nvps.add(new BasicNameValuePair("data", data));
+
+            response().setHeader("Access-Control-Allow-Origin", "*");
+            response().setHeader("Cache-Control", "no-cache");
+            httpPost.setHeader(HTTP.CONTENT_TYPE,
+                    "application/x-www-form-urlencoded;charset=UTF-8");
+            httpPost.setEntity(new UrlEncodedFormEntity(nvps, "UTF-8"));
+            System.out.println("1:" + httpPost.getParams());
+            response = httpclient.execute(httpPost);
+            HttpEntity responseEntity = response.getEntity();
+            System.out.println("2:" + response.getStatusLine());
+            if (responseEntity != null) {
+                System.out.println("Response content length: "
+                        + responseEntity.getContentLength());
+            }
+
+            result = EntityUtils.toString(responseEntity);
+            System.out.println("result:");
+            System.out.println(result);
+        } catch (ClientProtocolException e) {
+            System.err.println(e.getMessage());
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            httpclient.getConnectionManager().shutdown();
+        }
+        return result;
+    }
+
+    /**
+     * method for resolves the client url according to round robin algorithm
+     *
+     * @param count
+     *            number of the files
+     * @param i
+     *            current file id
+     * @return client url for current executing file
+     */
+
+    // ------ vasileios comment
+    // change it! should take as input a RoutingPolicy (create a new abstract class called RoutingPolicy and RoundRobin will be just one subclass of that. RoutingPolicy will have an abstract method called getNextUrl)
+    private static String getNextUrl(int count, int i) {
+        // two urls to running clients
+        List<String> servers = Arrays.asList("http://localhost:9002/pentaho",
+                "http://localhost:9003/pentaho");
+        if ((count >= servers.size() && i < servers.size())
+                || (count < servers.size())) {
+            return servers.get(i);
+        } else if (count >= servers.size() && i >= servers.size()) {
+            return servers.get(i - (count - servers.size()));
+        } else {
+            return servers.get(0);
+        }
+    }
+
+    public static Result checkPreFlight() {
+        response().setHeader("Access-Control-Allow-Origin", "*");
+        response().setHeader("Access-Control-Allow-Methods",
+                "POST, GET, OPTIONS, PUT, DELETE");
+        response().setHeader("Access-Control-Max-Age", "300");
+        response().setHeader("Access-Control-Allow-Headers",
+                "Origin, X-Requested-With, Content-Type, Accept");
+        return ok();
+    }
+
+
+
+    @Component
+    public class SimpleCORSFilter implements Filter {
+
+        public void doFilter(ServletRequest req, ServletResponse res,
+                             FilterChain chain) throws IOException, ServletException {
+            HttpServletResponse response = (HttpServletResponse) res;
+            response.setHeader("Access-Control-Allow-Origin", "*");
+            response.setHeader("Access-Control-Allow-Methods",
+                    "POST, GET, OPTIONS, DELETE");
+            response.setHeader("Access-Control-Max-Age", "3600");
+            response.setHeader("Access-Control-Allow-Headers",
+                    "x-requested-with");
+            chain.doFilter(req, res);
+        }
+
+        public void init(FilterConfig filterConfig) {
+        }
+
+        public void destroy() {
+        }
+
+    }
+}
+
+
+

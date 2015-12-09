@@ -1,0 +1,20 @@
+initial.xml: Step name: SUPPLIER Processed: 10000 Input: 10000 Runtime: 2851
+Step name: Sort on s_nationkey Processed: 10000 Input: 0 Runtime: 3005
+Step name: Merge Join Processed: 10025 Input: 0 Runtime: 3371
+Step name: NATION Processed: 25 Input: 25 Runtime: 282
+Step name: Sort on n_nationkey Processed: 25 Input: 0 Runtime: 185
+Step name: REGION Processed: 5 Input: 5 Runtime: 232
+Step name: Sort on r_regionkey Processed: 5 Input: 0 Runtime: 173
+Step name: Sort on n_regionkey  Processed: 10000 Input: 0 Runtime: 3384
+Step name: Merge Join 2 Processed: 10005 Input: 0 Runtime: 3696
+Step name: FILTER_R_NAME_EUROPE Processed: 10000 Input: 0 Runtime: 3701
+Step name: LINEITEM Processed: 12974 Input: 12974 Runtime: 7613
+Step name: Sort on l_suppkey Processed: 12974 Input: 0 Runtime: 7562
+Step name: Sort on s_suppkey Processed: 0 Input: 0 Runtime: 3721
+Step name: Merge Join 3 Processed: 12974 Input: 0 Runtime: 7715
+Step name: Merge Join 4 Processed: 0 Input: 0 Runtime: 8202
+Step name: Group by l_suppkey, SUM revenue Processed: 0 Input: 0 Runtime: 8062
+Step name: Sort on revenue Processed: 0 Input: 0 Runtime: 8202
+Step name: OUTPUT Processed: 0 Input: 0 Runtime: 8207
+Step name: User Defined Java Expression Processed: 0 Input: 0 Runtime: 7716
+

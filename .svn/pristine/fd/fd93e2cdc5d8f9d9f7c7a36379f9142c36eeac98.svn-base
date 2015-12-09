@@ -1,0 +1,40 @@
+initial.xml: Step name: SUPPLIER Processed: 10000 Input: 10000 Runtime: 3214
+Step name: Sort on s_nationkey Processed: 10000 Input: 0 Runtime: 3358
+Step name: Merge Join Processed: 10025 Input: 0 Runtime: 3750
+Step name: NATION Processed: 25 Input: 25 Runtime: 309
+Step name: Sort on n_nationkey Processed: 25 Input: 0 Runtime: 214
+Step name: REGION Processed: 5 Input: 5 Runtime: 308
+Step name: Sort on r_regionkey Processed: 5 Input: 0 Runtime: 214
+Step name: Sort on n_regionkey  Processed: 10000 Input: 0 Runtime: 3762
+Step name: Merge Join 2 Processed: 10005 Input: 0 Runtime: 4074
+Step name: FILTER_R_NAME_EUROPE Processed: 10000 Input: 0 Runtime: 4079
+Step name: LINEITEM Processed: 12974 Input: 12974 Runtime: 4499
+Step name: Sort on l_suppkey Processed: 12974 Input: 0 Runtime: 5459
+Step name: Sort on s_suppkey Processed: 0 Input: 0 Runtime: 4081
+Step name: Merge Join 3 Processed: 12974 Input: 0 Runtime: 5614
+Step name: Merge Join 4 Processed: 0 Input: 0 Runtime: 6134
+Step name: Group by l_suppkey, SUM revenue Processed: 0 Input: 0 Runtime: 6014
+Step name: Sort on revenue Processed: 0 Input: 0 Runtime: 6135
+Step name: OUTPUT Processed: 0 Input: 0 Runtime: 6138
+Step name: User Defined Java Expression Processed: 0 Input: 0 Runtime: 5615
+
+initial1.xml: Step name: SUPPLIER Processed: 10000 Input: 10000 Runtime: 4658
+Step name: Sort on s_nationkey Processed: 10000 Input: 0 Runtime: 4606
+Step name: Merge Join Processed: 10025 Input: 0 Runtime: 4945
+Step name: NATION Processed: 25 Input: 25 Runtime: 270
+Step name: Sort on n_nationkey Processed: 25 Input: 0 Runtime: 208
+Step name: REGION Processed: 5 Input: 5 Runtime: 270
+Step name: Sort on r_regionkey Processed: 5 Input: 0 Runtime: 208
+Step name: Sort on n_regionkey  Processed: 10000 Input: 0 Runtime: 4956
+Step name: Merge Join 2 Processed: 10005 Input: 0 Runtime: 5264
+Step name: FILTER_R_NAME_EUROPE Processed: 10000 Input: 0 Runtime: 5268
+Step name: LINEITEM Processed: 12974 Input: 12974 Runtime: 3662
+Step name: Sort on l_suppkey Processed: 12974 Input: 0 Runtime: 6569
+Step name: Sort on s_suppkey Processed: 0 Input: 0 Runtime: 5270
+Step name: Merge Join 3 Processed: 12974 Input: 0 Runtime: 6723
+Step name: Merge Join 4 Processed: 0 Input: 0 Runtime: 7255
+Step name: Group by l_suppkey, SUM revenue Processed: 0 Input: 0 Runtime: 7135
+Step name: Sort on revenue Processed: 0 Input: 0 Runtime: 7256
+Step name: OUTPUT Processed: 0 Input: 0 Runtime: 7259
+Step name: User Defined Java Expression Processed: 0 Input: 0 Runtime: 6724
+
