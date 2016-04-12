@@ -175,53 +175,92 @@
   <hop> <from>concat-phone3 7 2</from><to>Union 3</to><enabled>Y</enabled> </hop>
   <hop> <from>concat-phone3-null 2 2</from><to>Union 3</to><enabled>Y</enabled> </hop>
   <hop> <from>gndr-f-F-m-M</from><to>gndr-unknown</to><enabled>Y</enabled> </hop>
-  <hop> <from>gndr-f-F-m-M</from><to>gndrToUpper</to><enabled>Y</enabled> </hop>
   <hop> <from>gndr-unknown</from><to>Union 4</to><enabled>Y</enabled> </hop>
-  <hop> <from>gndrToUpper</from><to>Union 4</to><enabled>Y</enabled> </hop>
   <hop> <from>xmlInput-CustomerMgmt</from><to>ActionType-NEW</to><enabled>Y</enabled> </hop>
-  <hop> <from>Calculator 2</from><to>Sort rows C_ID 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Calculator To UpperCase</from><to>Select prospect values</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter ActionType</from><to>Group by C_ID</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter rows Action New</from><to>Remove extra field</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter rows just NEW</from><to>To UpperCase</to><enabled>Y</enabled> </hop>
-  <hop> <from>Group by C_ID</from><to>Filter rows just NEW</to><enabled>Y</enabled> </hop>
-  <hop> <from>MarketingNameplate</from><to>Calculator To UpperCase</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join CID</from><to>Filter rows Action New</to><enabled>Y</enabled> </hop>
   <hop> <from>Merge Join Local tx_id</from><to>Sort rows C_NAT_TX_ID</to><enabled>Y</enabled> </hop>
   <hop> <from>Merge Join Prospect</from><to>Remove</to><enabled>Y</enabled> </hop>
-  <hop> <from>Prospect.csv</from><to>MarketingNameplate</to><enabled>Y</enabled> </hop>
   <hop> <from>Remove</from><to>Sort rows CID</to><enabled>Y</enabled> </hop>
   <hop> <from>Remove extra field</from><to>Sort rows C_LCL_TX_ID</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select prospect values</from><to>Sort rows &#x28;LastName, FirstName..&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select prospect values</from><to>Sort rows &#x28;LastName FirstName..&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Remove </from><to>Sort rows CID 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows &#x28;LastName, FirstName..&#x29;</from><to>Merge Join Prospect</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows &#x28;LastName FirstName..&#x29;</from><to>Merge Join Prospect</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows CID</from><to>Merge Join CID</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows CID 2</from><to>Merge Join CID</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows C_ID 2</from><to>Filter ActionType</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows C_ID 2</from><to>Remove </to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows C_LCL_TX_ID</from><to>Merge Join Local tx_id</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows LN, FN..</from><to>Merge Join Prospect</to><enabled>Y</enabled> </hop>
-  <hop> <from>To UpperCase</from><to>Sort rows LN, FN..</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows LN FN..</from><to>Merge Join Prospect</to><enabled>Y</enabled> </hop>
   <hop> <from>Add surrogate key </from><to>DimCustomer load</to><enabled>Y</enabled> </hop>
   <hop> <from>Add surrogate key </from><to>Select values 10 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Merge Join national</from><to>Select and Rename</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select and Rename</from><to>calc date</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values 10 2</from><to>customerkeys</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows tx_id 2</from><to>Merge Join national</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows C_NAT_TX_ID</from><to>Merge Join national</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values</from><to>Calculator 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>calc date</from><to>date-toDATE</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort by date</from><to>AddConst</to><enabled>Y</enabled> </hop>
-  <hop> <from>AddConst</from><to>Add surrogate key </to><enabled>Y</enabled> </hop>
   <hop> <from>date-toDATE</from><to>cid-toInt</to><enabled>Y</enabled> </hop>
   <hop> <from>cid-toInt</from><to>dob-toDATE</to><enabled>Y</enabled> </hop>
   <hop> <from>dob-toDATE</from><to>tier-toINT</to><enabled>Y</enabled> </hop>
-  <hop> <from>tier-toINT</from><to>Sort by date</to><enabled>Y</enabled> </hop>
   <hop> <from>Remove spaces from tx_id 2</from><to>Rename tx_id</to><enabled>Y</enabled> </hop>
   <hop> <from>Remove spaces from tx_id 2</from><to>Sort rows tx_id</to><enabled>Y</enabled> </hop>
   <hop> <from>Rename tx_id</from><to>Sort rows tx_id 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows tx_id</from><to>Merge Join Local tx_id</to><enabled>Y</enabled> </hop>
   <hop> <from>TaxRate</from><to>Remove spaces from tx_id 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>toUpperCase</to><enabled>Y</enabled> </hop>
+  <hop> <from>toUpperCase</from><to>Sort rows C_ID 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>HighValue</from><to>highvalue 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>HighValue</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Prospect.csv</from><to>addTagField</to><enabled>Y</enabled> </hop>
+  <hop> <from>addTagField</from><to>HighValue</to><enabled>Y</enabled> </hop>
+  <hop> <from>highvalue 2</from><to>high value</to><enabled>Y</enabled> </hop>
+  <hop> <from>high value</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>expenses</to><enabled>Y</enabled> </hop>
+  <hop> <from>toUpperCase 3</from><to>Sort rows LN FN..</to><enabled>Y</enabled> </hop>
+  <hop> <from>gndr-f-F-m-M</from><to>toUpperCase </to><enabled>Y</enabled> </hop>
+  <hop> <from>toUpperCase </from><to>Union 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>expenses 2</from><to>expenses 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>expenses 3</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>expenses</from><to>expenses 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>expenses</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Boomer</from><to>Dummy &#x28;do nothing&#x29; 2 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Boomer</from><to>Boomer 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Boomer 2</from><to>Boomer 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Boomer 3</from><to>Dummy &#x28;do nothing&#x29; 2 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29; 2</from><to>Boomer</to><enabled>Y</enabled> </hop>
+  <hop> <from>MoneyAlert</from><to>Dummy &#x28;do nothing&#x29; 2 2 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>MoneyAlert</from><to>MoneyAlert 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>MoneyAlert 2</from><to>MoneyAlert 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>MoneyAlert 3</from><to>Dummy &#x28;do nothing&#x29; 2 2 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29; 2 2</from><to>MoneyAlert</to><enabled>Y</enabled> </hop>
+  <hop> <from>Spender</from><to>Dummy &#x28;do nothing&#x29; 2 2 2 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Spender</from><to>Spender 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Spender 2</from><to>Spender 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Spender 3</from><to>Dummy &#x28;do nothing&#x29; 2 2 2 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29; 2 2 2</from><to>Spender</to><enabled>Y</enabled> </hop>
+  <hop> <from>Inherited</from><to>Dummy &#x28;do nothing&#x29; 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Inherited</from><to>Inherited 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Inherited 3</from><to>Inherited 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Inherited 2</from><to>Dummy &#x28;do nothing&#x29; 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29; 2 2 2 2</from><to>Inherited</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29; 3</from><to>remove extra</to><enabled>Y</enabled> </hop>
+  <hop> <from>remove extra</from><to>Calculator To UpperCase</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select and Rename</from><to>calc date </to><enabled>Y</enabled> </hop>
+  <hop> <from>calc date </from><to>date-toDATE</to><enabled>Y</enabled> </hop>
+  <hop> <from>AddConst&#x28;is current true&#x29; 2</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows 2</from><to>TRUE</to><enabled>Y</enabled> </hop>
+  <hop> <from>Group by</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join 3</from><to>Filter rows 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort by cid</from><to>AddConst&#x28;is current true&#x29; 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort by cid</from><to>Group by</to><enabled>Y</enabled> </hop>
+  <hop> <from>tier-toINT</from><to>Sort by cid</to><enabled>Y</enabled> </hop>
+  <hop> <from>Union 5</from><to>Sort cid</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort cid</from><to>Add surrogate key </to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows 2</from><to>Union 5</to><enabled>Y</enabled> </hop>
+  <hop> <from>TRUE</from><to>Union 5</to><enabled>Y</enabled> </hop>
+  <hop> <from>ActionType-NEW</from><to>Dummy &#x28;do nothing&#x29; 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter ActionType</from><to>Dummy &#x28;do nothing&#x29; 5</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join CID</from><to>Remove extra field</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter ActionType</from><to>Select values 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 2</from><to>toUpperCase 3</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>AREA_CODE-not-NULL</name>
@@ -409,7 +448,7 @@
            <schema_name/>
            </partitioning>
 <send_true_to>gndr-f-F-m-M</send_true_to>
-<send_false_to/>
+<send_false_to>Dummy &#x28;do nothing&#x29; 4</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
@@ -420,7 +459,7 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>524</xloc>
+      <xloc>481</xloc>
       <yloc>321</yloc>
       <draw>Y</draw>
       </GUI>
@@ -449,14 +488,14 @@
       <max_value>999999999</max_value>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>6302</xloc>
-      <yloc>462</yloc>
+      <xloc>6941</xloc>
+      <yloc>461</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>AddConst</name>
+    <name>AddConst&#x28;is current true&#x29; 2</name>
     <type>Calculator</type>
     <description/>
     <distribute>Y</distribute>
@@ -494,6 +533,20 @@
 <grouping_symbol/>
 <currency_symbol/>
 </calculation>
+       <calculation><field_name>IsCurrent</field_name>
+<calc_type>CONSTANT</calc_type>
+<field_a>FALSE</field_a>
+<field_b/>
+<field_c/>
+<value_type>Boolean</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
        <calculation><field_name>Status</field_name>
 <calc_type>CONSTANT</calc_type>
 <field_a>ACTIVE</field_a>
@@ -508,24 +561,84 @@
 <grouping_symbol/>
 <currency_symbol/>
 </calculation>
-       <calculation><field_name>IsCurrent</field_name>
-<calc_type>CONSTANT</calc_type>
-<field_a>TRUE</field_a>
-<field_b/>
-<field_c/>
-<value_type>Boolean</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>6188</xloc>
-      <yloc>461</yloc>
+      <xloc>6361</xloc>
+      <yloc>502</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Boomer</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Boomer 2</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29; 2 2</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>Age</leftvalue>
+ <function>&#x3e;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Integer</type><text>45</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>3897</xloc>
+      <yloc>356</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Boomer 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>3726</xloc>
+      <yloc>356</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Boomer 3</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>tag</field_name>
+<formula_string>&#x28;tag&#x21;&#x3d;null &#x26;&#x26; &#x21;tag.isEmpty&#x28;&#x29;&#x29;&#x3f;tag&#x2b;&#x22;&#x2b;Boomer&#x22;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>tag</replace_field>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>3725</xloc>
+      <yloc>237</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -618,95 +731,6 @@
     </step>
 
   <step>
-    <name>Calculator 2</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <calculation><field_name>FIrstName</field_name>
-<calc_type>UPPER_CASE</calc_type>
-<field_a>C_F_NAME</field_a>
-<field_b/>
-<field_c/>
-<value_type>None</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>LasName</field_name>
-<calc_type>UPPER_CASE</calc_type>
-<field_a>C_L_NAME</field_a>
-<field_b/>
-<field_c/>
-<value_type>None</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>Addr1</field_name>
-<calc_type>UPPER_CASE</calc_type>
-<field_a>C_ADLINE1</field_a>
-<field_b/>
-<field_c/>
-<value_type>None</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>Addr2</field_name>
-<calc_type>UPPER_CASE</calc_type>
-<field_a>C_ADLINE2</field_a>
-<field_b/>
-<field_c/>
-<value_type>None</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>PostCode</field_name>
-<calc_type>UPPER_CASE</calc_type>
-<field_a>C_ZIPCODE</field_a>
-<field_b/>
-<field_c/>
-<value_type>None</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>3676</xloc>
-      <yloc>530</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Calculator To UpperCase</name>
     <type>Calculator</type>
     <description/>
@@ -789,8 +813,8 @@
 </calculation>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4312</xloc>
-      <yloc>164</yloc>
+      <xloc>4531</xloc>
+      <yloc>763</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -959,8 +983,160 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>6429</xloc>
-      <yloc>462</yloc>
+      <xloc>7068</xloc>
+      <yloc>461</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29;</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>3895</xloc>
+      <yloc>621</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>3899</xloc>
+      <yloc>418</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 2 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>3898</xloc>
+      <yloc>237</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 2 2 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4037</xloc>
+      <yloc>353</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 2 2 2 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4134</xloc>
+      <yloc>596</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 3</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4529</xloc>
+      <yloc>598</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 4</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>532</xloc>
+      <yloc>244</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 5</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>3816</xloc>
+      <yloc>848</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1237,8 +1413,8 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>Group by C_ID</send_true_to>
-<send_false_to/>
+<send_true_to>Select values 2</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29; 5</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
@@ -1249,38 +1425,19 @@
    <function>&#x3d;</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>NEW</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>OR</operator>
-   <conditions>
-    <condition>
-     <negated>N</negated>
-     <leftvalue>ActionType</leftvalue>
-     <function>&#x3d;</function>
-     <rightvalue/>
-     <value><name>constant</name><type>String</type><text>UPDCUST</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
-    <condition>
-     <negated>N</negated>
-     <operator>OR</operator>
-     <leftvalue>ActionType</leftvalue>
-     <function>&#x3d;</function>
-     <rightvalue/>
-     <value><name>constant</name><type>String</type><text>INACT</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
-    </conditions>
-   </condition>
   </conditions>
  </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>3769</xloc>
-      <yloc>400</yloc>
+      <xloc>3831</xloc>
+      <yloc>930</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Filter rows Action New</name>
+    <name>Filter rows 2</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1290,55 +1447,26 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>Remove extra field</send_true_to>
-<send_false_to/>
+<send_true_to>TRUE</send_true_to>
+<send_false_to>Union 5</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue>ActionType</leftvalue>
+ <leftvalue>PTS_max</leftvalue>
  <function>&#x3d;</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>NEW</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+ <rightvalue>ActionTSDate</rightvalue>
+ </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4730</xloc>
-      <yloc>461</yloc>
+      <xloc>6572</xloc>
+      <yloc>459</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Filter rows just NEW</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>To UpperCase</send_true_to>
-<send_false_to/>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>Actype</leftvalue>
- <function>&#x3d;</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>NEW</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>3987</xloc>
-      <yloc>400</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Group by C_ID</name>
+    <name>Group by</name>
     <type>GroupBy</type>
     <description/>
     <distribute>Y</distribute>
@@ -1358,51 +1486,148 @@
       <give_back_row>N</give_back_row>
       <group>
         <field>
-          <name>C_ID</name>
+          <name>cid_INT</name>
         </field>
       </group>
       <fields>
         <field>
-          <aggregate>Actype</aggregate>
-          <subject>ActionType</subject>
-          <type>CONCAT_COMMA</type>
-          <valuefield/>
-        </field>
-        <field>
-          <aggregate>LastName</aggregate>
-          <subject>C_L_NAME</subject>
-          <type>CONCAT_COMMA</type>
-          <valuefield/>
-        </field>
-        <field>
-          <aggregate>FirstName</aggregate>
-          <subject>C_F_NAME</subject>
-          <type>CONCAT_COMMA</type>
-          <valuefield/>
-        </field>
-        <field>
-          <aggregate>Addr1</aggregate>
-          <subject>C_ADLINE1</subject>
-          <type>CONCAT_COMMA</type>
-          <valuefield/>
-        </field>
-        <field>
-          <aggregate>Addr2</aggregate>
-          <subject>C_ADLINE2</subject>
-          <type>CONCAT_COMMA</type>
-          <valuefield/>
-        </field>
-        <field>
-          <aggregate>Postcode</aggregate>
-          <subject>C_ZIPCODE</subject>
-          <type>CONCAT_COMMA</type>
+          <aggregate>PTS_max</aggregate>
+          <subject>ActionTSDate</subject>
+          <type>MAX</type>
           <valuefield/>
         </field>
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>3876</xloc>
-      <yloc>399</yloc>
+      <xloc>6354</xloc>
+      <yloc>397</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>HighValue</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>highvalue 2</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>NetWorth</leftvalue>
+   <function>&#x3e;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>Integer</type><text>1000000</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <leftvalue>Income</leftvalue>
+   <function>&#x3e;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>Integer</type><text>200000</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>3899</xloc>
+      <yloc>697</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Inherited</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Inherited 3</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29; 3</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>Age</leftvalue>
+   <function>&#x3c;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>Integer</type><text>25</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>AND</operator>
+   <leftvalue>NetWorth</leftvalue>
+   <function>&#x3e;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>Integer</type><text>1000000</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4411</xloc>
+      <yloc>598</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Inherited 2</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>tag</field_name>
+<formula_string>&#x28;tag&#x21;&#x3d;null &#x26;&#x26; &#x21;tag.isEmpty&#x28;&#x29;&#x29;&#x3f;tag&#x2b;&#x22;&#x2b;Inherited&#x22;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>tag</replace_field>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4529</xloc>
+      <yloc>522</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Inherited 3</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4414</xloc>
+      <yloc>521</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1669,8 +1894,8 @@
     </step>
 
   <step>
-    <name>MarketingNameplate</name>
-    <type>ScriptValueMod</type>
+    <name>Merge Join 3</name>
+    <type>MergeJoin</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1679,21 +1904,19 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var tag&#x3b;&#xa;&#xa;if &#x28;&#x28;NetWorth &#x3e; 1000000&#x29; &#x7c;&#x7c; &#x28;Income &#x3e; 200000&#x29;&#x29; &#x7b;tag &#x3d; &#x27;HighValue&#x27;&#x3b;&#x7d;&#xa;&#xa;if &#x28;&#x28;NumberChildren &#x3e; 3&#x29; &#x7c;&#x7c; &#x28;NumberCreditCards &#x3e; 5&#x29; &#x26;&#x26; &#x28;tag &#x3d;&#x3d; &#x27;&#x27;&#x29;&#x29; &#x7b;tag &#x3d; &#x27;Expenses&#x27;&#x3b;&#x7d;&#xa;else if &#x28;&#x28;NumberChildren &#x3e; 3&#x29; &#x7c;&#x7c; &#x28;NumberCreditCards &#x3e; 5&#x29; &#x26;&#x26; &#x28;tag &#x21;&#x3d; &#x27;&#x27;&#x29;&#x29; &#x7b;tag &#x3d; tag &#x2b; &#x27;&#x2b; Expenses&#x27;&#x3b;&#x7d;&#xa;&#xa;if &#x28;&#x28;Age &#x3e; 45&#x29; &#x26;&#x26; &#x28;tag &#x3d;&#x3d; &#x27;&#x27;&#x29;&#x29; &#x7b;tag &#x3d; &#x27;Boomer&#x27;&#x3b;&#x7d;&#xa;else if &#x28;&#x28;Age &#x3e; 45&#x29; &#x26;&#x26; &#x28;tag &#x21;&#x3d; &#x27;&#x27;&#x29;&#x29; &#x7b;tag &#x3d; tag &#x2b; &#x27;&#x2b; Boomer&#x27;&#x3b;&#x7d;&#xa;&#xa;if &#x28;&#x28;Income &#x3c; 50000&#x29; &#x7c;&#x7c; &#x28;CreditRating &#x3c; 600&#x29; &#x7c;&#x7c; &#x28;NetWorth &#x3c; 100000&#x29; &#x26;&#x26; &#x28;tag &#x3d;&#x3d; &#x27;&#x27;&#x29;&#x29; &#x7b;tag &#x3d; &#x27;MoneyAlert&#x27;&#x3b;&#x7d;&#xa;else if &#x28;&#x28;Income &#x3c; 50000&#x29; &#x7c;&#x7c; &#x28;CreditRating &#x3c; 600&#x29; &#x7c;&#x7c; &#x28;NetWorth &#x3c; 100000&#x29; &#x26;&#x26; &#x28;tag &#x21;&#x3d; &#x27;&#x27;&#x29;&#x29; &#x7b;tag &#x3d; tag &#x2b; &#x27;&#x2b; MoneyAlert&#x27;&#x3b;&#x7d;&#xa;&#xa;if &#x28;&#x28;NumberCars &#x3e; 3&#x29; &#x7c;&#x7c; &#x28;NumberCreditCards &#x3e; 7&#x29; &#x26;&#x26; &#x28;tag &#x3d;&#x3d; &#x27;&#x27;&#x29;&#x29; &#x7b;tag &#x3d; &#x27;Spender&#x27;&#x3b;&#x7d;&#xa;else if &#x28;&#x28;NumberCars &#x3e; 3&#x29; &#x7c;&#x7c; &#x28;NumberCreditCards &#x3e; 7&#x29; &#x26;&#x26; &#x28;tag &#x21;&#x3d; &#x27;&#x27;&#x29;&#x29; &#x7b;tag &#x3d; tag &#x2b; &#x27;&#x2b; Spender&#x27;&#x3b;&#x7d;&#xa;&#xa;if &#x28;&#x28;Age &#x3c; 25&#x29; &#x26;&#x26; &#x28;NetWorth &#x3e; 1000000&#x29; &#x26;&#x26; &#x28;tag &#x3d;&#x3d; &#x27;&#x27;&#x29;&#x29; &#x7b;tag &#x3d; &#x27;Inherited&#x27;&#x3b;&#x7d;&#xa;else if &#x28;&#x28;Age &#x3c; 25&#x29; &#x26;&#x26; &#x28;NetWorth &#x3e; 1000000&#x29; &#x26;&#x26; &#x28;tag &#x21;&#x3d; &#x27;&#x27;&#x29;&#x29; &#x7b;tag &#x3d; tag &#x2b; &#x27;&#x2b; Inherited&#x27;&#x3b;&#x7d;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>tag</name>
-        <rename>tag</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
+<join_type>RIGHT OUTER</join_type>
+<step1>Group by</step1>
+<step2>AddConst&#x28;is current true&#x29; 2</step2>
+    <keys_1>
+      <key>cid_INT</key>
+    </keys_1>
+    <keys_2>
+      <key>cid_INT</key>
+    </keys_2>
+     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4079</xloc>
-      <yloc>164</yloc>
+      <xloc>6474</xloc>
+      <yloc>460</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1702,7 +1925,7 @@
     <name>Merge Join CID</name>
     <type>MergeJoin</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -1720,8 +1943,8 @@
     </keys_2>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4605</xloc>
-      <yloc>462</yloc>
+      <xloc>4667</xloc>
+      <yloc>992</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1766,8 +1989,8 @@
            <schema_name/>
            </partitioning>
 <join_type>LEFT OUTER</join_type>
-<step1>Sort rows LN, FN..</step1>
-<step2>Sort rows &#x28;LastName, FirstName..&#x29;</step2>
+<step1>Sort rows LN FN..</step1>
+<step2>Sort rows &#x28;LastName FirstName..&#x29;</step2>
     <keys_1>
       <key>LN</key>
       <key>FN</key>
@@ -1784,8 +2007,8 @@
     </keys_2>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4312</xloc>
-      <yloc>401</yloc>
+      <xloc>4374</xloc>
+      <yloc>931</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1814,6 +2037,99 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>5438</xloc>
       <yloc>459</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>MoneyAlert</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>MoneyAlert 2</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29; 2 2 2</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>Income</leftvalue>
+   <function>&#x3c;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>Integer</type><text>50000</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <leftvalue>CreditRating</leftvalue>
+   <function>&#x3c;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>Number</type><text>600.0</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask>&#x23;.&#x23;&#x3b;-&#x23;.&#x23;</mask></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <leftvalue>NetWorth</leftvalue>
+   <function>&#x3c;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>Integer</type><text>100000</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4034</xloc>
+      <yloc>234</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>MoneyAlert 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4195</xloc>
+      <yloc>234</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>MoneyAlert 3</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>tag</field_name>
+<formula_string>&#x28;tag&#x21;&#x3d;null &#x26;&#x26; &#x21;tag.isEmpty&#x28;&#x29;&#x29;&#x3f;tag&#x2b;&#x22;&#x2b;MoneyAlert&#x22;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>tag</replace_field>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4196</xloc>
+      <yloc>353</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2225,8 +2541,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4080</xloc>
-      <yloc>253</yloc>
+      <xloc>4133</xloc>
+      <yloc>697</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2269,8 +2585,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4432</xloc>
-      <yloc>401</yloc>
+      <xloc>4494</xloc>
+      <yloc>931</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2401,8 +2717,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4454</xloc>
-      <yloc>531</yloc>
+      <xloc>4516</xloc>
+      <yloc>1061</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2557,8 +2873,66 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4860</xloc>
-      <yloc>460</yloc>
+      <xloc>4844</xloc>
+      <yloc>987</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Remove spaces from tx_id 2</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>tx_id_1</field_name>
+<formula_string>tx_id.replaceAll&#x28;&#x22;&#x5c;&#x5c;s&#x2b;&#x22;,&#x22;&#x22;&#x29;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>5297</xloc>
+      <yloc>239</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Rename tx_id</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>tx_id_1</name>
+        <rename>tx_id_nat</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>tx_name</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>tx_rate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>5438</xloc>
+      <yloc>298</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2781,8 +3155,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4312</xloc>
-      <yloc>233</yloc>
+      <xloc>4374</xloc>
+      <yloc>763</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2913,8 +3287,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>3574</xloc>
-      <yloc>530</yloc>
+      <xloc>3636</xloc>
+      <yloc>1060</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2930,7 +3304,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>C_ID</name>
+    <fields>      <field>        <name>cid_INT</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -2941,14 +3315,48 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>6301</xloc>
-      <yloc>579</yloc>
+      <xloc>6940</xloc>
+      <yloc>578</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Sort by date</name>
+    <name>Sort by cid</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>cid_INT</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>6087</xloc>
+      <yloc>461</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort cid</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -2967,7 +3375,7 @@
       <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>date</name>
+        <name>cid_INT</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <presorted>N</presorted>
@@ -2975,14 +3383,14 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>6085</xloc>
-      <yloc>460</yloc>
+      <xloc>6843</xloc>
+      <yloc>461</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Sort rows &#x28;LastName, FirstName..&#x29;</name>
+    <name>Sort rows &#x28;LastName FirstName..&#x29;</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -3033,8 +3441,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4312</xloc>
-      <yloc>299</yloc>
+      <xloc>4374</xloc>
+      <yloc>829</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -3067,8 +3475,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4607</xloc>
-      <yloc>401</yloc>
+      <xloc>4669</xloc>
+      <yloc>931</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -3101,8 +3509,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4606</xloc>
-      <yloc>532</yloc>
+      <xloc>4668</xloc>
+      <yloc>1062</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -3135,8 +3543,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>3771</xloc>
-      <yloc>531</yloc>
+      <xloc>3940</xloc>
+      <yloc>1060</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -3169,8 +3577,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4989</xloc>
-      <yloc>460</yloc>
+      <xloc>5051</xloc>
+      <yloc>990</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -3210,7 +3618,7 @@
     </step>
 
   <step>
-    <name>Sort rows LN, FN..</name>
+    <name>Sort rows LN FN..</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -3261,8 +3669,42 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4193</xloc>
-      <yloc>401</yloc>
+      <xloc>4255</xloc>
+      <yloc>931</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows tx_id</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>tx_id_1</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>5151</xloc>
+      <yloc>295</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -3302,6 +3744,118 @@
     </step>
 
   <step>
+    <name>Spender</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Spender 2</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29; 2 2 2 2</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>NumberCars</leftvalue>
+   <function>&#x3e;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>Integer</type><text>3</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <leftvalue>NumberCreditCards</leftvalue>
+   <function>&#x3e;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>Number</type><text>7.0</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask>&#x23;.&#x23;&#x3b;-&#x23;.&#x23;</mask></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4040</xloc>
+      <yloc>435</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Spender 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4201</xloc>
+      <yloc>435</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Spender 3</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>10</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>tag</field_name>
+<formula_string>&#x28;tag&#x21;&#x3d;null &#x26;&#x26; &#x21;tag.isEmpty&#x28;&#x29;&#x29;&#x3f;tag&#x2b;&#x22;&#x2b;Spender&#x22;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>tag</replace_field>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4193</xloc>
+      <yloc>505</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>TRUE</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>IsCurrent</field_name>
+<formula_string>true</formula_string>
+<value_type>Boolean</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>IsCurrent</replace_field>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>6677</xloc>
+      <yloc>401</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>TaxRate</name>
     <type>TableInput</type>
     <description/>
@@ -3323,95 +3877,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>5298</xloc>
       <yloc>160</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>To UpperCase</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <calculation><field_name>LN</field_name>
-<calc_type>UPPER_CASE</calc_type>
-<field_a>LastName</field_a>
-<field_b/>
-<field_c/>
-<value_type>None</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>FN</field_name>
-<calc_type>UPPER_CASE</calc_type>
-<field_a>FirstName</field_a>
-<field_b/>
-<field_c/>
-<value_type>None</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>A1</field_name>
-<calc_type>UPPER_CASE</calc_type>
-<field_a>Addr1</field_a>
-<field_b/>
-<field_c/>
-<value_type>None</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>A2</field_name>
-<calc_type>UPPER_CASE</calc_type>
-<field_a>Addr2</field_a>
-<field_b/>
-<field_c/>
-<value_type>None</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>PC</field_name>
-<calc_type>UPPER_CASE</calc_type>
-<field_a>Postcode</field_a>
-<field_b/>
-<field_c/>
-<value_type>None</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>4090</xloc>
-      <yloc>400</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -3493,7 +3958,26 @@
     </step>
 
   <step>
-    <name>calc date</name>
+    <name>Union 5</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>6749</xloc>
+      <yloc>461</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>addTagField</name>
     <type>Calculator</type>
     <description/>
     <distribute>Y</distribute>
@@ -3503,9 +3987,9 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-       <calculation><field_name>ActionTSDate</field_name>
-<calc_type>GET_ONLY_DIGITS</calc_type>
-<field_a>ActionTS</field_a>
+       <calculation><field_name>tag</field_name>
+<calc_type>CONSTANT</calc_type>
+<field_a> </field_a>
 <field_b/>
 <field_c/>
 <value_type>String</value_type>
@@ -3519,7 +4003,33 @@
 </calculation>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>5658</xloc>
+      <xloc>4006</xloc>
+      <yloc>698</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>calc date </name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>ActionTSDate</field_name>
+<formula_string>ActionTS.replaceAll&#x28;&#x22;&#x5c;&#x5c;D&#x2b;&#x22;, &#x22;&#x22;&#x29;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>5665</xloc>
       <yloc>459</yloc>
       <draw>Y</draw>
       </GUI>
@@ -4128,7 +4638,7 @@
     <fields>
         <field>
           <column_name>customerid</column_name>
-          <stream_name>C_ID</stream_name>
+          <stream_name>cid_INT</stream_name>
         </field>
         <field>
           <column_name>sk_customerid</column_name>
@@ -4137,8 +4647,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>6304</xloc>
-      <yloc>669</yloc>
+      <xloc>6943</xloc>
+      <yloc>668</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -4196,6 +4706,80 @@
     </step>
 
   <step>
+    <name>expenses</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>expenses 2</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29; 2</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>NumberChildren</leftvalue>
+ <function>&#x3e;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Integer</type><text>3</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>3898</xloc>
+      <yloc>537</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>expenses 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>3727</xloc>
+      <yloc>537</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>expenses 3</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>tag</field_name>
+<formula_string>&#x28;tag&#x21;&#x3d;null &#x26;&#x26; &#x21;tag.isEmpty&#x28;&#x29;&#x29;&#x3f;tag&#x2b;&#x22;&#x2b;Expenses&#x22;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>tag</replace_field>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>3726</xloc>
+      <yloc>418</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>gndr-f-F-m-M</name>
     <type>FilterRows</type>
     <description/>
@@ -4206,7 +4790,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>gndrToUpper</send_true_to>
+<send_true_to>toUpperCase </send_true_to>
 <send_false_to>gndr-unknown</send_false_to>
     <compare>
 <condition>
@@ -4289,34 +4873,72 @@
     </step>
 
   <step>
-    <name>gndrToUpper</name>
-    <type>Calculator</type>
+    <name>high value</name>
+    <type>Janino</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-       <calculation><field_name>gndr_upper</field_name>
-<calc_type>UPPER_CASE</calc_type>
-<field_a>C_GNDR</field_a>
-<field_b/>
-<field_c/>
-<value_type>None</value_type>
+       <formula><field_name>tag</field_name>
+<formula_string>&#x28;tag&#x21;&#x3d;null &#x26;&#x26; &#x21;tag.isEmpty&#x28;&#x29;&#x29;&#x3f;tag&#x2b;&#x22;&#x2b;HighValue&#x22;&#x3a;null</formula_string>
+<value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
+<replace_field>tag</replace_field>
+</formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>739</xloc>
-      <yloc>322</yloc>
+      <xloc>3722</xloc>
+      <yloc>621</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>highvalue 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>3730</xloc>
+      <yloc>697</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>remove extra</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>text</field_name>
+<formula_string>&#x28;tag&#x21;&#x3d;null &#x26;&#x26; &#x21;tag.isEmpty&#x28;&#x29; &#x26;&#x26; &#x21;tag.equals&#x28;&#x22; &#x22;&#x29;&#x29;&#x3f;tag.substring&#x28;2&#x29;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>tag</replace_field>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4532</xloc>
+      <yloc>679</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -4343,6 +4965,140 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>6012</xloc>
       <yloc>460</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>toUpperCase</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>FirstName</field_name>
+<formula_string>&#x28;C_F_NAME&#x21;&#x3d;null &#x26;&#x26; &#x21;C_F_NAME.isEmpty&#x28;&#x29;&#x29;&#x3f;C_F_NAME.toUpperCase&#x28;&#x29;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>LastName</field_name>
+<formula_string>&#x28;C_L_NAME&#x21;&#x3d;null &#x26;&#x26; &#x21;C_L_NAME.isEmpty&#x28;&#x29;&#x29;&#x3f;C_L_NAME.toUpperCase&#x28;&#x29;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>Addr1</field_name>
+<formula_string>&#x28;C_ADLINE1&#x21;&#x3d;null &#x26;&#x26; &#x21;C_ADLINE1.isEmpty&#x28;&#x29;&#x29;&#x3f;C_ADLINE1.toUpperCase&#x28;&#x29;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>Addr2</field_name>
+<formula_string>&#x28;C_ADLINE2&#x21;&#x3d;null &#x26;&#x26; &#x21;C_ADLINE2.isEmpty&#x28;&#x29;&#x29;&#x3f;C_ADLINE2.toUpperCase&#x28;&#x29;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>Postcode</field_name>
+<formula_string>&#x28;C_ZIPCODE&#x21;&#x3d;null &#x26;&#x26; &#x21;C_ZIPCODE.isEmpty&#x28;&#x29;&#x29;&#x3f;C_ZIPCODE.toUpperCase&#x28;&#x29;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>3772</xloc>
+      <yloc>1061</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>toUpperCase </name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>gndr_upper</field_name>
+<formula_string>&#x28;C_GNDR&#x21;&#x3d;null &#x26;&#x26; &#x21;C_GNDR.isEmpty&#x28;&#x29;&#x29;&#x3f;C_GNDR.toUpperCase&#x28;&#x29;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>739</xloc>
+      <yloc>321</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>toUpperCase 3</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>FN</field_name>
+<formula_string>&#x28;FirstName&#x21;&#x3d;null &#x26;&#x26; &#x21;FirstName.isEmpty&#x28;&#x29;&#x29;&#x3f;FirstName.toUpperCase&#x28;&#x29;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>LN</field_name>
+<formula_string>&#x28;LastName&#x21;&#x3d;null &#x26;&#x26; &#x21;LastName.isEmpty&#x28;&#x29;&#x29;&#x3f;LastName.toUpperCase&#x28;&#x29;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>A1</field_name>
+<formula_string>&#x28;Addr1&#x21;&#x3d;null &#x26;&#x26; &#x21;Addr1.isEmpty&#x28;&#x29;&#x29;&#x3f;Addr1.toUpperCase&#x28;&#x29;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>A2</field_name>
+<formula_string>&#x28;Addr2&#x21;&#x3d;null &#x26;&#x26; &#x21;Addr2.isEmpty&#x28;&#x29;&#x29;&#x3f;Addr2.toUpperCase&#x28;&#x29;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>PC</field_name>
+<formula_string>&#x28;Postcode&#x21;&#x3d;null &#x26;&#x26; &#x21;Postcode.isEmpty&#x28;&#x29;&#x29;&#x3f;Postcode.toUpperCase&#x28;&#x29;&#x3a;null</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>4163</xloc>
+      <yloc>941</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -4936,40 +5692,14 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>392</xloc>
-      <yloc>320</yloc>
+      <xloc>308</xloc>
+      <yloc>318</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Remove spaces from tx_id 2</name>
-    <type>Janino</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <formula><field_name>tx_id_1</field_name>
-<formula_string>tx_id.replaceAll&#x28;&#x22;&#x5c;&#x5c;s&#x2b;&#x22;,&#x22;&#x22;&#x29;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>5297</xloc>
-      <yloc>239</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Rename tx_id</name>
+    <name>Select values 2</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -4979,57 +5709,143 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>tx_id_1</name>
-        <rename>tx_id_nat</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>tx_name</name>
+    <fields>      <field>        <name>C_L_NAME</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>tx_rate</name>
+      </field>      <field>        <name>C_F_NAME</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_M_NAME</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_ADLINE1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_ADLINE2</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_ZIPCODE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_CITY</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_STATE_PROV</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_CTRY</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_PRIM_EMAIL</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_ALT_EMAIL</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_LCL_TX_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_NAT_TX_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CA_B_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CA_NAME</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Account</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ContactInfo</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ActionType</name>
+        <rename>Actype</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ActionTS</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_TAX_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_GNDR</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_TIER</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>C_DOB</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>phone1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>phone2</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>phone3</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>gndr_upper</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>FirstName</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>LastName</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Addr1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Addr2</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Postcode</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>5442</xloc>
-      <yloc>298</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Sort rows tx_id</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>tx_id_1</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>5153</xloc>
-      <yloc>296</yloc>
+      <xloc>4004</xloc>
+      <yloc>923</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

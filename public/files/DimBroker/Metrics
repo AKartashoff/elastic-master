@@ -1,0 +1,14 @@
+DimBroker.ktr: Step name: EmployeeJobCode = 314 Processed: 23726 Input: 0 Runtime: 554
+Step name: Dummy (do nothing) Processed: 16582 Input: 0 Runtime: 557
+Step name: HR.csv Processed: 25000 Input: 25001 Runtime: 332
+Step name: EmployeeJobCode in not null Processed: 25000 Input: 0 Runtime: 461
+Step name: NullJobCode Processed: 1274 Input: 0 Runtime: 466
+Step name: Add constants Processed: 7144 Input: 0 Runtime: 1368
+Step name: Add sequence Processed: 14288 Input: 0 Runtime: 1376
+Step name: DimBroker Processed: 7144 Input: 0 Runtime: 2634
+Step name: Select values Processed: 7144 Input: 0 Runtime: 1380
+Step name: BrokerKeys Processed: 7144 Input: 0 Runtime: 2032
+Step name: dimdate Processed: 25933 Input: 25933 Runtime: 870
+Step name: Aggregate Rows Processed: 25933 Input: 0 Runtime: 871
+Step name: Merge Join Processed: 7145 Input: 0 Runtime: 1356
+

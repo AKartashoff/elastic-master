@@ -1,1 +1,24 @@
-FactCashBalances.ktr: Erroruting Transformation
+FactCashBalances.ktr: Step name: DimAccount Processed: 15110 Input: 15110 Runtime: 1817
+Step name: Select values Processed: 15110 Input: 0 Runtime: 1770
+Step name: Sort accountId Processed: 15110 Input: 0 Runtime: 9603
+Step name: Sort CT_CA_ID Processed: 602113 Input: 0 Runtime: 9727
+Step name: Merge Join accID Processed: 617223 Input: 0 Runtime: 10088
+Step name: date Processed: 25933 Input: 25933 Runtime: 1916
+Step name: Select values 2 Processed: 25933 Input: 0 Runtime: 1914
+Step name: Sort rows date Processed: 602113 Input: 0 Runtime: 13337
+Step name: Merge Join date Processed: 628046 Input: 0 Runtime: 13673
+Step name: calculate sum Processed: 602113 Input: 0 Runtime: 13675
+Step name: Select values 3 Processed: 602113 Input: 0 Runtime: 13679
+Step name: Filter rows in not null Processed: 602113 Input: 0 Runtime: 13683
+Step name: Dummy (do nothing) Processed: 0 Input: 0 Runtime: 13685
+Step name: Filter rows date Processed: 602113 Input: 0 Runtime: 10089
+Step name: AddConst Processed: 549200 Input: 0 Runtime: 77134
+Step name: FactCashBalancies Processed: 549200 Input: 0 Runtime: 78277
+Step name: ct_dts-noTimeDate Processed: 602113 Input: 0 Runtime: 10092
+Step name: Sort date Processed: 25933 Input: 0 Runtime: 11039
+Step name: Sort rows Processed: 549200 Input: 0 Runtime: 74894
+Step name: Cumulative sum Processed: 549200 Input: 0 Runtime: 76019
+Step name: Unique rows Processed: 602113 Input: 0 Runtime: 13685
+Step name: CashTransactions Processed: 602113 Input: 602113 Runtime: 6032
+Step name: User Defined Java Expression Processed: 602113 Input: 0 Runtime: 6035
+
